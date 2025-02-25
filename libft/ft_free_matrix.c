@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_free_matrix.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drahwanj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 23:26:16 by drahwanj          #+#    #+#             */
-/*   Updated: 2025/02/25 23:13:03 by drahwanj         ###   ########.fr       */
+/*   Created: 2025/02/25 23:08:33 by drahwanj          #+#    #+#             */
+/*   Updated: 2025/02/25 23:08:48 by drahwanj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *s)
+void	ft_free_matrix(char ***m)
 {
-	int	count;
+	int	i;
 
-	count = 0;
-	if (!s)
-		return (count);
-	while (*s != '\0')
+	i = 0;
+	while (m && m[0] && m[0][i])
 	{
-		count++;
-		s++;
+		free(m[0][i]);
+		i++;
 	}
-	return (count);
+	if (m)
+	{
+		free(m[0]);
+		*m = NULL;
+	}
 }
