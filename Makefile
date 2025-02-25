@@ -5,7 +5,7 @@ FILES = main.c
 CC = cc 
 RM = rm -rf
 CFLAGS = -Wall -Werror -Wextra
-LINK = -lreadline -lncurses #libft/libft.a
+LINK = -lreadline -lncurses libft/libft.a
 INCLUDE = -I include 
 MAKEFLAGS += --no-print-directory
 
@@ -18,6 +18,7 @@ OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	@make -C libft
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LINK)
 	@echo "./$(NAME) was created!"
 
@@ -29,9 +30,11 @@ $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
 clean:
+	@make -C libft clean
 	@$(RM) $(OBJ_DIR)
 
 fclean: clean
+	@make -C libft fclean
 	@$(RM) $(NAME)
 	@echo "./$(NAME) was deleted."
 
