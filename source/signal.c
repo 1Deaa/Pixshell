@@ -12,16 +12,16 @@
 
 #include "minishell.h"
 
-int g_status;
+int	g_status;
 
-void    handle_sigint(int signo)
+void	handle_sigint(int signo)
 {
-    if (signo == SIGINT)
-    {
-        g_status = 130;
-        ioctl(STDIN_FILENO, TIOCSTI, "\n");
-        rl_on_new_line();
-        rl_replace_line("", 0);
-        rl_redisplay();
-    }
+	if (signo == SIGINT)
+	{
+		g_status = 130;
+		ioctl(STDIN_FILENO, TIOCSTI, "\n");
+		rl_on_new_line();
+		rl_replace_line("", 0);
+		rl_redisplay();
+	}
 }

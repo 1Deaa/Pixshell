@@ -30,17 +30,17 @@
 
 # define DEBUG 42
 
-typedef struct  s_list
+typedef struct s_list
 {
-    void            *value;
-    struct s_list   *next;
-}                   t_list;
+	void			*value;
+	struct s_list	*next;
+}					t_list;
 
-typedef struct  s_prompt
+typedef struct s_prompt
 {
-    t_list  *cmds;
-    char    **envp;
-    pid_t   pid;
-}           t_prompt;
+	t_list	*cmds;
+	char	**envp;
+	pid_t	pid;
+}			t_prompt;
 
 #endif

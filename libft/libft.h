@@ -45,7 +45,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 char	*ft_strdup(const char *s1);
 
 /* Finds the len of matrix M. */
-int     ft_len_matrix(char **m);
+int		ft_len_matrix(char **m);
 
 /* Frees allocated memory in matrix M. */
 void	ft_free_matrix(char ***m);

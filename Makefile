@@ -1,6 +1,6 @@
 NAME = minishell
 
-FILES = main.c
+FILES = main.c signal.c
 
 CC = cc 
 RM = rm -rf
